@@ -1,0 +1,23 @@
+<p>courses works!</p>
+<h3 [style.backgroundColor]="isActive ? 'blue': 'red' ">{{title}}</h3>
+
+<!-- 
+    
+<img  src="{{img}}" alt="">
+<img  [src]="img" alt="">
+
+ -->
+<div (click)="onClickDiv()">
+
+    <button (click)="onClick($event)" class="btn btn-primary" [class.active]="isActive">Mon boutton</button>
+
+</div>
+
+<input #email type="text" (keyup.enter)="onKeyUp(email)">
+<input type="text" (keyup.esc)="onKeyUpE()">
+
+<input  [(ngModel)]="varemail" type="text" (keyup.enter)="onKeyUp2()">
+
+<p>
+  Email:   {{varemail}}
+</p>

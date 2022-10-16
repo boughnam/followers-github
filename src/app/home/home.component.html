@@ -1,0 +1,36 @@
+
+<div class="container">
+    <div class="col-md-6 col-mr-offset-6">
+
+        <button class="btn btn-success" (click)="Ajouter()">Add</button>
+
+        <br><br> <br><br> 
+        <signup-form></signup-form>
+
+        <br><br> <br><br> 
+        <contact-form></contact-form>
+    </div>
+</div>
+
+
+<h1>Title globale : </h1>
+
+<br><br><br>
+<courses></courses>
+<livres [isFavorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></livres>
+
+<p>{{body | resume : 3}}</p>
+
+<panel>
+<div class="header">
+    This is the header
+</div>
+<div class="body">
+    <h2>This is the content</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti adipisci, doloremque in, fugit alias assumenda, earum ducimus et totam saepe magnam temporibus recusandae cupiditate quos repellat. Deserunt, quam ex!</p>
+</div>
+
+</panel>
+
+
+<br><br>

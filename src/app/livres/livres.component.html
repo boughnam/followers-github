@@ -1,0 +1,38 @@
+<p>livres works!</p>
+
+<div class="container">
+    <ul class="list-group">
+        <!-- pipes  uppercase lowercase-->
+        <li class="list-group-item"> Title: {{course.titre | lowercase | uppercase}}</li>
+        <li class="list-group-item"> Rating: {{course.avis | number:'1.2-2'}}</li>
+        <li class="list-group-item"> Students: {{course.participants}}</li>
+        <li class="list-group-item"> Price: {{course.prix | currency:'EUR':'symbol':'3.1-1'}}</li>
+        <li class="list-group-item"> releaseDate: {{course.publicationDate | date:'yyyy-mm-dd'}}</li>
+
+    </ul>
+
+</div>
+
+
+<span (click)="onClick()" [class]="isActive ? 'glyphicon glyphicon-star': 'glyphicon glyphicon-star-empty' " 
+aria-hidden="true"></span>
+<br><br>
+
+<span (click)="onClick()"  class="glyphicon" 
+[ngClass]="{
+     'glyphicon-star': isActive,
+     'glyphicon-star-empty': !isActive
+}"
+[ngStyle]="{
+    'color': isActive ? 'red' : 'blue',
+    'font-size': isActive ? '40px' : '20px'
+}"
+aria-hidden="true"></span>
+
+
+
+<!-- <p>{{personne.adress?.ville}}</p> -->
+<br><br><br>
+
+<!-- <input type="text" appInputFormat  [format]="'lowercase'"><br>
+ --><input type="text"   [appInputFormat]="'lowercase'">

@@ -1,0 +1,61 @@
+
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        <ng-content select=".header"></ng-content>
+    </div>
+    <div class="panel-body">
+        <ng-content select=".body"></ng-content>
+    </div>
+
+</div>
+
+
+<div *ngIf="courses.length > 0; then listCourses else noCourses"></div>
+<ng-template #listCourses>Liste de Mes Coures</ng-template>
+<ng-template #noCourses>Pas de cours</ng-template>
+
+<br><br>
+
+<div [hidden]="courses.length == 0"> Liste de Mes Coures </div>
+<div [hidden]="courses.length > 0"> Pas de cours </div>
+
+
+<br><br>
+
+<ul class="nav nav-pills">
+    <li [class.active]="viewCourse == 'Angular'"><a class="clickable" (click)="viewCourse = 'Angular' ">Angular</a></li>
+    <li [class.active]="viewCourse == 'JEE'"><a (click)="viewCourse = 'JEE' ">JEE</a></li>
+    <li [class.active]="viewCourse == 'React'"><a (click)="viewCourse = 'React' ">React</a></li>
+</ul>
+
+<div [ngSwitch]="viewCourse">
+    <div *ngSwitchCase="'Angular'">Lorem Angular</div>
+    <div *ngSwitchCase="'JEE'">Lorem JEE</div>
+    <div *ngSwitchCase="'React'">Lorem React</div>
+    <div *ngSwitchDefault>Autre chose</div>
+
+</div>
+
+<br><br><br><br>
+
+<button class="btn btn-success" (click)="loadCourses()">LOAD</button>
+
+<button class="btn btn-success" (click)="addCourse()">Ajouter</button>
+
+<ul>
+    <li *ngFor="let course of courses2;index as i; first as fi;last as la; trackBy: trackCourse">
+          <span *ngIf="fi">FIRST ELEMENT </span>
+          <span *ngIf=" ">LAST ELEMENT </span>
+          {{i}} :  {{course.title}} 
+
+          <button class="btn btn-danger" (click)="deleteCourse(course)">Delete</button>
+          <button class="btn btn-warning" (click)="editCourse(course)">Editer</button>
+
+    
+        </li>
+</ul>
+
+
+
+<br><br><br><br>

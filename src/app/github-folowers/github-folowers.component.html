@@ -1,0 +1,30 @@
+<div class="media" *ngFor="let follower of followers">
+    <div class="media-left">
+      <a href="#">
+        <img class="avatar media-object" [src]="follower.avatar_url" alt="..." width="50px" height="50px">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{follower.login}}</h4>
+<!--       <a [href]="follower.html_url">{{follower.html_url}}</a>
+ -->    
+ <a [routerLink]="['/followers',follower.id, follower.login]" 
+                  [queryParams]="{page: 1, type: follower.type, var : 'val'}" >{{follower.html_url}}</a>
+</div>
+  </div>
+  
+<br>
+
+<!-- <ul class="list-group">
+   
+    <li class="list-group-item" *ngFor="let follower of followers">
+        <div align="left">
+            <img [src]="follower.avatar_url" alt="img" width="50px" height="50px">
+        </div>
+        <h4>{{follower.login}}</h4>
+        <p>{{follower.html_url}}</p>
+       
+    </li>
+</ul>
+ -->
+
