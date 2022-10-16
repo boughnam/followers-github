@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class UsernameValidator {\n  static cannotContainSpaces(control) {\n    if (control.value.indexOf(' ') >= 0) {\n      // parceque si on trouve un espace on retourne -1\n      return {\n        cannotContainSpaces: true\n      };\n    }\n\n    return null;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
