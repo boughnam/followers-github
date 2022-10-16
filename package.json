@@ -27,8 +27,8 @@
     "tslib": "^2.3.0",
     "typescript": "~4.7.2",
     "zone.js": "~0.11.4",
-    "express": "^4.18.1",
-    "npm": "^8.19.2"
+    "express": "4.18.1"
+   
   },
   "devDependencies": {
     
@@ -40,5 +40,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     
+  },
+  "engines": {
+    "node": "16.18.0",
+    "npm": "8.19.2"
   }
 }
